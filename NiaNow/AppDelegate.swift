@@ -100,7 +100,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         // 1
         let userInfo = response.notification.request.content.userInfo
         let aps = userInfo["aps"] as! [String: AnyObject]
-        
+        print(aps)
         // 2
         //        if let newsItem = NewsItem.makeNewsItem(aps) {
         //            (window?.rootViewController as? UITabBarController)?.selectedIndex = 1
