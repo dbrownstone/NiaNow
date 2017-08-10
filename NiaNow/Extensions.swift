@@ -12,17 +12,17 @@ extension UIColor {
     
     
     /**
-     allows a color request without the addition of division by 255 
-    */
+     allows a color request without the addition of division by 255
+     */
     convenience init(r: CGFloat, g: CGFloat, b:CGFloat, a:CGFloat) {
         self.init(red: r/255, green: g/255, blue: b/255, alpha: a)
     }
-
+    
     
     static var themeGreenColor: UIColor {
         return UIColor(r:0, g:104, b:51, a: 1)
     }
-
+    
     static var themeRedColor: UIColor {
         return UIColor(r: 197, g: 51, b: 42, a: 0.25)
     }
@@ -40,7 +40,7 @@ extension UIImageView {
      loads an image from cache if it already exists there
      
      - Parameter urlString: Firebase URL for this image
-    */
+     */
     func loadImageUsingCacheWithUrlString(urlString: String) {
         
         self.image = nil

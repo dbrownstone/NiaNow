@@ -10,6 +10,7 @@ use_frameworks!
 pod 'Firebase/Database'
 pod 'Firebase/Auth'
 pod 'Firebase/Storage'
+pod 'Firebase/Messaging'
 pod 'MGSwipeTableCell'
 pod 'MBProgressHUD'
 

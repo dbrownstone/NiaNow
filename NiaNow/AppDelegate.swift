@@ -8,28 +8,29 @@
 
 import UIKit
 import Firebase
+import FirebaseMessaging
 import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         registerForPushNotifications()
         
         FirebaseApp.configure()
         
-        let themeRedColor = UIColor(red: 255/255, green: 255/255, blue: 0/255, alpha: 0.8)
-        UITabBar.appearance().barTintColor = themeRedColor //UIColor.themeRedColor
-        UITabBar.appearance().tintColor = UIColor.red
+        UITabBar.appearance().barTintColor = UIColor.lightGray
+        UITabBar.appearance().tintColor = UIColor.blue
         UITabBar.appearance().unselectedItemTintColor = UIColor.purple
         
-        UINavigationBar.appearance().barTintColor = themeRedColor //UIColor.themeRedColor
-        UINavigationBar.appearance().tintColor = UIColor.red
+        UINavigationBar.appearance().barTintColor = UIColor.lightGray
+        UINavigationBar.appearance().tintColor = UIColor.blue
         
         UNUserNotificationCenter.current().delegate = self
+        self.registerForPushNotifications()
         
         if let notification = launchOptions?[.remoteNotification] as? [String: AnyObject] {
             let aps = notification["aps"] as! [String: AnyObject]
@@ -41,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return true
     }
-
+    
     func registerForPushNotifications() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
             (granted, error) in
@@ -51,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.getNotificationSettings()
         }
     }
-
+    
     func getNotificationSettings() {
         UNUserNotificationCenter.current().getNotificationSettings { (settings) in
             print("Notification settings: \(settings)")
@@ -84,6 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Print full message.
         print(userInfo)
+        print("MessageId :  \(String(describing: (userInfo["gcm_message_id"])!))")
         let nvc = (window?.rootViewController as? UITabBarController)?.viewControllers?[0] as! UINavigationController
         let controller = nvc.topViewController as! ClassesTableViewController
         controller.handleNotification(userInfo["aps"] as! [String: AnyObject])
@@ -100,16 +102,16 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         let aps = userInfo["aps"] as! [String: AnyObject]
         
         // 2
-//        if let newsItem = NewsItem.makeNewsItem(aps) {
-//            (window?.rootViewController as? UITabBarController)?.selectedIndex = 1
-//            
-//            // 3
-//            if response.actionIdentifier == viewActionIdentifier,
-//                let url = URL(string: newsItem.link) {
-//                let safari = SFSafariViewController(url: url)
-//                window?.rootViewController?.present(safari, animated: true, completion: nil)
-//            }
-//        }
+        //        if let newsItem = NewsItem.makeNewsItem(aps) {
+        //            (window?.rootViewController as? UITabBarController)?.selectedIndex = 1
+        //
+        //            // 3
+        //            if response.actionIdentifier == viewActionIdentifier,
+        //                let url = URL(string: newsItem.link) {
+        //                let safari = SFSafariViewController(url: url)
+        //                window?.rootViewController?.present(safari, animated: true, completion: nil)
+        //            }
+        //        }
         
         // 4
         completionHandler()

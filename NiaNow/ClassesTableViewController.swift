@@ -13,9 +13,9 @@ import MGSwipeTableCell
 /**
  If a user is currently logged in, this controller displays all of the classes applicable for the logged-in user. Sliding a class name to the left connects this user to the class chat screen, while sliding the class name to the right allows the user to remove this class from the display
  If there is no logged-in user, the controller displays a login screen
-*/
+ */
 class ClassesTableViewController: UITableViewController {
-
+    
     // segue ids
     var loginToNiaNow = "toLogin"
     var unwindSegueId = "returnToClasses"
@@ -33,16 +33,16 @@ class ClassesTableViewController: UITableViewController {
         
         checkIfUserIsLoggedIn()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     /**
      Determines whether a user is currently logged in. If not, the login screen is displayed otherwise, the user's name is displayed in the title
      and all the classes of which the current user is a member or teacher, are displayed.
-    */
+     */
     func checkIfUserIsLoggedIn() {
         let currentUserId = Auth.auth().currentUser?.uid
         if currentUserId == nil {
@@ -54,12 +54,12 @@ class ClassesTableViewController: UITableViewController {
             setNavTitle(currentUserId!)
         }
     }
-
+    
     /**
      extracts the currently logged-in user's information and displays the name in the nav bar
      
      - Parameter currentUserId: the UDID string of the currently logged-in member
-    */
+     */
     func setNavTitle(_ currentUserId: String) {
         let ref = Database.database().reference().child("users")
         ref.observe(.value, with: { snapshot in
@@ -81,9 +81,9 @@ class ClassesTableViewController: UITableViewController {
     
     /**
      extracts all the Nia Classes of which the currently logged-in user is either a member or the teacher. Note: **User** stores both the teacher and other members in its list of members!
-    */
+     */
     func getAllClasses() {
-         Database.database().reference().child("classes").observe(.value, with: { snapshot in
+        Database.database().reference().child("classes").observe(.value, with: { snapshot in
             var newClasses: [NiaClass] = []
             for aClass in snapshot.children {
                 let niaClass = NiaClass(snapshot: aClass as! DataSnapshot)
@@ -111,9 +111,9 @@ class ClassesTableViewController: UITableViewController {
      If the app is running, either in the foreground, or the background, when a notification arrives, this function determines how to handle it i.e. which screen to display
      
      - Parameter aps: dictionary of data from the push notification
-        1. aps["chat"] could have value of "class" if Class Chat is requested or "one-on-one" if individual chat is required
-        2. aps["toId"] specifies the UDID string of the specific class or the receiving user
-    */
+     1. aps["chat"] could have value of "class" if Class Chat is requested or "one-on-one" if individual chat is required
+     2. aps["toId"] specifies the UDID string of the specific class or the receiving user
+     */
     public func handleNotification(_ aps:[String: AnyObject]) {
         if aps["chat"] as! String == "class" {
             for thisClass in existingClasses! {
@@ -129,14 +129,14 @@ class ClassesTableViewController: UITableViewController {
     
     /**
      opens the login screen
-    */
+     */
     func handleLoginRegister() {
         performSegue(withIdentifier: self.loginToNiaNow, sender: self)
     }
     
     /**
      presents an alert to add a new class by name
-    */
+     */
     func displayAlertToAddClass(){
         let title = "New Nia Class"
         let doneTitle = "Save"
@@ -162,10 +162,10 @@ class ClassesTableViewController: UITableViewController {
         
         self.present(alertController, animated: true, completion: nil)
     }
-
+    
     /**
      creates a view of a label and an spinning activityIndicator
-    */
+     */
     private func setLoadingScreen() {
         
         // Sets the view which contains the loading text and the spinner
@@ -195,18 +195,18 @@ class ClassesTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let count = existingClasses?.count {
             return count
         }
         return 0
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MGSwipeTableCell
         let thisClass = existingClasses?[indexPath.row]
@@ -242,9 +242,9 @@ class ClassesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedClass = existingClasses?[indexPath.row]
         performSegue(withIdentifier: "showMembers", sender: self)
-
+        
     }
-
+    
     @IBAction func handleLogout(_ sender: Any) {
         do {
             try Auth.auth().signOut()
@@ -255,7 +255,7 @@ class ClassesTableViewController: UITableViewController {
     }
     
     // MARK: - Navigation
-
+    
     @IBAction func unwindToClasses(segue:UIStoryboardSegue) {
         if segue.identifier == unwindSegueId {
             let currentUserId = Auth.auth().currentUser?.uid
@@ -286,5 +286,5 @@ class ClassesTableViewController: UITableViewController {
         }
     }
     
-
+    
 }

@@ -76,7 +76,7 @@ class NiaClassViewController: UITableViewController {
             self.members = newMembersList
             self.tableView.reloadData()
         })
-}
+    }
     
     // MARK: - User Actions -
     
@@ -87,7 +87,7 @@ class NiaClassViewController: UITableViewController {
         
         performSegue(withIdentifier: addUserSequeId, sender: self)
     }
-
+    
     // MARK: - UITableViewDataSource -
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -115,7 +115,11 @@ class NiaClassViewController: UITableViewController {
             cell?.accessoryType = .disclosureIndicator
         }
         
-        membersName.text = member.name
+        if self.selectedClass.addedByUser == member.uid {
+            membersName.text = "\(String(describing: (member.name)!))(T)"
+        } else {
+            membersName.text = member.name
+        }
         membersPhoneNumber.text = member.phoneNo
         
         membersImage.contentMode = .scaleAspectFit
@@ -166,7 +170,7 @@ class NiaClassViewController: UITableViewController {
         let controller = segue.source as! NewMemberViewController
         self.selectedClass = controller.theClass
         members.append(self.newMember!)
-//        self.tableView.reloadData()
+        //        self.tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -176,5 +180,5 @@ class NiaClassViewController: UITableViewController {
             controller.currentUser = self.currentUser
         }
     }
-
+    
 }
