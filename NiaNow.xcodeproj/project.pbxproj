@@ -1,0 +1,484 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6344D9311F2F5413005E45C9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6344D9301F2F5413005E45C9 /* AboutViewController.swift */; };
+		6378E8091F262F8C00A51ADE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6378E8081F262F8C00A51ADE /* AppDelegate.swift */; };
+		6378E80E1F262F8C00A51ADE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6378E80C1F262F8C00A51ADE /* Main.storyboard */; };
+		6378E8101F262F8C00A51ADE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6378E80F1F262F8C00A51ADE /* Assets.xcassets */; };
+		6378E8131F262F8C00A51ADE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6378E8111F262F8C00A51ADE /* LaunchScreen.storyboard */; };
+		6378E81B1F2713F000A51ADE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6378E81A1F2713F000A51ADE /* Extensions.swift */; };
+		6378E81D1F273D6F00A51ADE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6378E81C1F273D6F00A51ADE /* LoginViewController.swift */; };
+		6378E8211F27404900A51ADE /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 6378E8201F27404900A51ADE /* Podfile */; };
+		6378E8231F2742AA00A51ADE /* ClassesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6378E8221F2742AA00A51ADE /* ClassesTableViewController.swift */; };
+		6378E8251F27486400A51ADE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6378E8241F27486400A51ADE /* GoogleService-Info.plist */; };
+		6378E8271F27784900A51ADE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6378E8261F27784900A51ADE /* User.swift */; };
+		6378E8291F27792800A51ADE /* LoginViewController+handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6378E8281F27792800A51ADE /* LoginViewController+handlers.swift */; };
+		6378E82B1F2783D500A51ADE /* NiaClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6378E82A1F2783D500A51ADE /* NiaClass.swift */; };
+		63BA3C7E1F2B734500E165FC /* ChatInputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BA3C7B1F2B734500E165FC /* ChatInputContainerView.swift */; };
+		63BA3C7F1F2B734500E165FC /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BA3C7C1F2B734500E165FC /* ChatLogController.swift */; };
+		63BA3C801F2B734500E165FC /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BA3C7D1F2B734500E165FC /* ChatMessageCell.swift */; };
+		63BA3C821F2B753200E165FC /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BA3C811F2B753200E165FC /* Message.swift */; };
+		63E4F99B1F2F216D0089796D /* NiaClassViewController+handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E4F99A1F2F216D0089796D /* NiaClassViewController+handlers.swift */; };
+		63F07EE31F29C8C000970B87 /* NiaClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F07EE21F29C8C000970B87 /* NiaClassViewController.swift */; };
+		63F07EE71F2A157C00970B87 /* NewMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F07EE61F2A157C00970B87 /* NewMemberViewController.swift */; };
+		D6F59444C7C82EAF3995961B /* Pods_NiaNow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A480A75C067C1EDDB60511E /* Pods_NiaNow.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5A480A75C067C1EDDB60511E /* Pods_NiaNow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NiaNow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		630FF3421F32E5F700ACB295 /* NiaNow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NiaNow.entitlements; sourceTree = "<group>"; };
+		6344D9301F2F5413005E45C9 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		6378E8051F262F8C00A51ADE /* NiaNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiaNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6378E8081F262F8C00A51ADE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6378E80D1F262F8C00A51ADE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6378E80F1F262F8C00A51ADE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6378E8121F262F8C00A51ADE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6378E8141F262F8C00A51ADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6378E81A1F2713F000A51ADE /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		6378E81C1F273D6F00A51ADE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6378E8201F27404900A51ADE /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		6378E8221F2742AA00A51ADE /* ClassesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassesTableViewController.swift; sourceTree = "<group>"; };
+		6378E8241F27486400A51ADE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6378E8261F27784900A51ADE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		6378E8281F27792800A51ADE /* LoginViewController+handlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoginViewController+handlers.swift"; sourceTree = "<group>"; };
+		6378E82A1F2783D500A51ADE /* NiaClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiaClass.swift; sourceTree = "<group>"; };
+		63BA3C7B1F2B734500E165FC /* ChatInputContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatInputContainerView.swift; sourceTree = "<group>"; };
+		63BA3C7C1F2B734500E165FC /* ChatLogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
+		63BA3C7D1F2B734500E165FC /* ChatMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageCell.swift; sourceTree = "<group>"; };
+		63BA3C811F2B753200E165FC /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		63E4F99A1F2F216D0089796D /* NiaClassViewController+handlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NiaClassViewController+handlers.swift"; sourceTree = "<group>"; };
+		63F07EE21F29C8C000970B87 /* NiaClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiaClassViewController.swift; sourceTree = "<group>"; };
+		63F07EE61F2A157C00970B87 /* NewMemberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMemberViewController.swift; sourceTree = "<group>"; };
+		CC69CA3621EF16C8C84D1595 /* Pods-NiaNow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiaNow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NiaNow/Pods-NiaNow.debug.xcconfig"; sourceTree = "<group>"; };
+		D67022A01E5427711FC6A104 /* Pods-NiaNow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiaNow.release.xcconfig"; path = "Pods/Target Support Files/Pods-NiaNow/Pods-NiaNow.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6378E8021F262F8C00A51ADE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6F59444C7C82EAF3995961B /* Pods_NiaNow.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6378E7FC1F262F8C00A51ADE = {
+			isa = PBXGroup;
+			children = (
+				6378E8071F262F8C00A51ADE /* NiaNow */,
+				6378E8201F27404900A51ADE /* Podfile */,
+				6378E8061F262F8C00A51ADE /* Products */,
+				BDBC79FFF781AB95CBF9A4C0 /* Pods */,
+				69BC7F35704ADBC264835B1A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6378E8061F262F8C00A51ADE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6378E8051F262F8C00A51ADE /* NiaNow.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6378E8071F262F8C00A51ADE /* NiaNow */ = {
+			isa = PBXGroup;
+			children = (
+				630FF3421F32E5F700ACB295 /* NiaNow.entitlements */,
+				6378E8081F262F8C00A51ADE /* AppDelegate.swift */,
+				63A8EC341F31EE7600983F89 /* Controllers */,
+				63A8EC361F31EEBD00983F89 /* Models */,
+				63BA3C7B1F2B734500E165FC /* ChatInputContainerView.swift */,
+				63BA3C7D1F2B734500E165FC /* ChatMessageCell.swift */,
+				6378E81A1F2713F000A51ADE /* Extensions.swift */,
+				6378E80C1F262F8C00A51ADE /* Main.storyboard */,
+				6378E80F1F262F8C00A51ADE /* Assets.xcassets */,
+				6378E8111F262F8C00A51ADE /* LaunchScreen.storyboard */,
+				6378E8141F262F8C00A51ADE /* Info.plist */,
+				6378E8241F27486400A51ADE /* GoogleService-Info.plist */,
+			);
+			path = NiaNow;
+			sourceTree = "<group>";
+		};
+		63A8EC341F31EE7600983F89 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				63A8EC351F31EE8F00983F89 /* Handlers */,
+				6344D9301F2F5413005E45C9 /* AboutViewController.swift */,
+				6378E8221F2742AA00A51ADE /* ClassesTableViewController.swift */,
+				63F07EE21F29C8C000970B87 /* NiaClassViewController.swift */,
+				63F07EE61F2A157C00970B87 /* NewMemberViewController.swift */,
+				63BA3C7C1F2B734500E165FC /* ChatLogController.swift */,
+				6378E81C1F273D6F00A51ADE /* LoginViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		63A8EC351F31EE8F00983F89 /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				63E4F99A1F2F216D0089796D /* NiaClassViewController+handlers.swift */,
+				6378E8281F27792800A51ADE /* LoginViewController+handlers.swift */,
+			);
+			name = Handlers;
+			sourceTree = "<group>";
+		};
+		63A8EC361F31EEBD00983F89 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				63BA3C811F2B753200E165FC /* Message.swift */,
+				6378E8261F27784900A51ADE /* User.swift */,
+				6378E82A1F2783D500A51ADE /* NiaClass.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		69BC7F35704ADBC264835B1A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A480A75C067C1EDDB60511E /* Pods_NiaNow.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BDBC79FFF781AB95CBF9A4C0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CC69CA3621EF16C8C84D1595 /* Pods-NiaNow.debug.xcconfig */,
+				D67022A01E5427711FC6A104 /* Pods-NiaNow.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6378E8041F262F8C00A51ADE /* NiaNow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6378E8171F262F8C00A51ADE /* Build configuration list for PBXNativeTarget "NiaNow" */;
+			buildPhases = (
+				DDEED4D22B3310690B86C140 /* [CP] Check Pods Manifest.lock */,
+				6378E8011F262F8C00A51ADE /* Sources */,
+				6378E8021F262F8C00A51ADE /* Frameworks */,
+				6378E8031F262F8C00A51ADE /* Resources */,
+				E09701D5A2EEAE97E5DA447A /* [CP] Embed Pods Frameworks */,
+				3D240F486EB97DA5941BB3A0 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NiaNow;
+			productName = NiaNow;
+			productReference = 6378E8051F262F8C00A51ADE /* NiaNow.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6378E7FD1F262F8C00A51ADE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "David Brownstone";
+				TargetAttributes = {
+					6378E8041F262F8C00A51ADE = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = K2U9D4SGK5;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 6378E8001F262F8C00A51ADE /* Build configuration list for PBXProject "NiaNow" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6378E7FC1F262F8C00A51ADE;
+			productRefGroup = 6378E8061F262F8C00A51ADE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6378E8041F262F8C00A51ADE /* NiaNow */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6378E8031F262F8C00A51ADE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6378E8131F262F8C00A51ADE /* LaunchScreen.storyboard in Resources */,
+				6378E8101F262F8C00A51ADE /* Assets.xcassets in Resources */,
+				6378E8251F27486400A51ADE /* GoogleService-Info.plist in Resources */,
+				6378E8211F27404900A51ADE /* Podfile in Resources */,
+				6378E80E1F262F8C00A51ADE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3D240F486EB97DA5941BB3A0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NiaNow/Pods-NiaNow-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDEED4D22B3310690B86C140 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E09701D5A2EEAE97E5DA447A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NiaNow/Pods-NiaNow-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6378E8011F262F8C00A51ADE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6378E8231F2742AA00A51ADE /* ClassesTableViewController.swift in Sources */,
+				63F07EE71F2A157C00970B87 /* NewMemberViewController.swift in Sources */,
+				6378E8291F27792800A51ADE /* LoginViewController+handlers.swift in Sources */,
+				6344D9311F2F5413005E45C9 /* AboutViewController.swift in Sources */,
+				63BA3C7E1F2B734500E165FC /* ChatInputContainerView.swift in Sources */,
+				6378E81D1F273D6F00A51ADE /* LoginViewController.swift in Sources */,
+				63E4F99B1F2F216D0089796D /* NiaClassViewController+handlers.swift in Sources */,
+				63BA3C7F1F2B734500E165FC /* ChatLogController.swift in Sources */,
+				6378E81B1F2713F000A51ADE /* Extensions.swift in Sources */,
+				63F07EE31F29C8C000970B87 /* NiaClassViewController.swift in Sources */,
+				6378E8271F27784900A51ADE /* User.swift in Sources */,
+				63BA3C821F2B753200E165FC /* Message.swift in Sources */,
+				63BA3C801F2B734500E165FC /* ChatMessageCell.swift in Sources */,
+				6378E82B1F2783D500A51ADE /* NiaClass.swift in Sources */,
+				6378E8091F262F8C00A51ADE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6378E80C1F262F8C00A51ADE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6378E80D1F262F8C00A51ADE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6378E8111F262F8C00A51ADE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6378E8121F262F8C00A51ADE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6378E8151F262F8C00A51ADE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6378E8161F262F8C00A51ADE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6378E8181F262F8C00A51ADE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC69CA3621EF16C8C84D1595 /* Pods-NiaNow.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NiaNow/NiaNow.entitlements;
+				DEVELOPMENT_TEAM = K2U9D4SGK5;
+				INFOPLIST_FILE = NiaNow/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.brownstone.NiaNow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6378E8191F262F8C00A51ADE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D67022A01E5427711FC6A104 /* Pods-NiaNow.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NiaNow/NiaNow.entitlements;
+				DEVELOPMENT_TEAM = K2U9D4SGK5;
+				INFOPLIST_FILE = NiaNow/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.brownstone.NiaNow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6378E8001F262F8C00A51ADE /* Build configuration list for PBXProject "NiaNow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6378E8151F262F8C00A51ADE /* Debug */,
+				6378E8161F262F8C00A51ADE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6378E8171F262F8C00A51ADE /* Build configuration list for PBXNativeTarget "NiaNow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6378E8181F262F8C00A51ADE /* Debug */,
+				6378E8191F262F8C00A51ADE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6378E7FD1F262F8C00A51ADE /* Project object */;
+}
