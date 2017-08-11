@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		632BDE451F3CC27E00EC5A37 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632BDE441F3CC27E00EC5A37 /* Settings.swift */; };
+		63302CA61F3D82FF005448E2 /* ChatLimits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63302CA51F3D82FF005448E2 /* ChatLimits.swift */; };
 		6344D9311F2F5413005E45C9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6344D9301F2F5413005E45C9 /* AboutViewController.swift */; };
 		6378E8091F262F8C00A51ADE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6378E8081F262F8C00A51ADE /* AppDelegate.swift */; };
 		6378E80E1F262F8C00A51ADE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6378E80C1F262F8C00A51ADE /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		5A480A75C067C1EDDB60511E /* Pods_NiaNow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NiaNow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		630FF3421F32E5F700ACB295 /* NiaNow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NiaNow.entitlements; sourceTree = "<group>"; };
 		632BDE441F3CC27E00EC5A37 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = Settings/Settings.swift; sourceTree = "<group>"; };
+		63302CA51F3D82FF005448E2 /* ChatLimits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatLimits.swift; sourceTree = "<group>"; };
 		6344D9301F2F5413005E45C9 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		6378E8051F262F8C00A51ADE /* NiaNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiaNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6378E8081F262F8C00A51ADE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63302CA41F3D82D2005448E2 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				632BDE441F3CC27E00EC5A37 /* Settings.swift */,
+				63302CA51F3D82FF005448E2 /* ChatLimits.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		6378E7FC1F262F8C00A51ADE = {
 			isa = PBXGroup;
 			children = (
@@ -121,7 +132,7 @@
 				63F07EE61F2A157C00970B87 /* NewMemberViewController.swift */,
 				63BA3C7C1F2B734500E165FC /* ChatLogController.swift */,
 				6378E81C1F273D6F00A51ADE /* LoginViewController.swift */,
-				632BDE441F3CC27E00EC5A37 /* Settings.swift */,
+				63302CA41F3D82D2005448E2 /* Settings */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -302,6 +313,7 @@
 				63E4F99B1F2F216D0089796D /* NiaClassViewController+handlers.swift in Sources */,
 				63BA3C7F1F2B734500E165FC /* ChatLogController.swift in Sources */,
 				6378E81B1F2713F000A51ADE /* Extensions.swift in Sources */,
+				63302CA61F3D82FF005448E2 /* ChatLimits.swift in Sources */,
 				63F07EE31F29C8C000970B87 /* NiaClassViewController.swift in Sources */,
 				6378E8271F27784900A51ADE /* User.swift in Sources */,
 				63BA3C821F2B753200E165FC /* Message.swift in Sources */,
