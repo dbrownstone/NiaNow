@@ -608,6 +608,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="picker" destination="CeJ-2u-t2k" id="14l-sD-Y8b"/>
                         <segue destination="Xvm-3r-HwA" kind="unwind" identifier="returnToSettings" unwindAction="unwindToSettingsWithSegue:" id="LUZ-PO-3xQ"/>
                     </connections>
                 </viewController>
