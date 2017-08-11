@@ -486,21 +486,37 @@
             </objects>
             <point key="canvasLocation" x="2694" y="-224"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Settings-->
         <scene sceneID="JeV-1w-18t">
             <objects>
-                <tableViewController id="xKt-aW-uho" sceneMemberID="viewController">
+                <tableViewController id="xKt-aW-uho" customClass="Settings" customModule="NiaNow" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="0ax-Ir-YZi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bG2-tO-Z8a">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="subtitle" textLabel="NOb-f8-fd4" detailTextLabel="lBg-AL-bgP" style="IBUITableViewCellStyleSubtitle" id="bG2-tO-Z8a">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bG2-tO-Z8a" id="nFm-L6-kf7">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NOb-f8-fd4">
+                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lBg-AL-bgP">
+                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -510,10 +526,41 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="vN2-vo-vz0"/>
+                    <connections>
+                        <segue destination="t0d-2K-vPF" kind="show" identifier="showConversationLimit" id="ofP-Mj-nkd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5t2-wX-IQC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1852" y="-610"/>
+            <point key="canvasLocation" x="1870" y="-873"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="XEu-64-9IR">
+            <objects>
+                <viewController id="t0d-2K-vPF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j5U-e2-68I"/>
+                        <viewControllerLayoutGuide type="bottom" id="dFE-iP-NKe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rMr-E4-3dc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CeJ-2u-t2k">
+                                <rect key="frame" x="0.0" y="190" width="375" height="216"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CeJ-2u-t2k" firstAttribute="centerY" secondItem="rMr-E4-3dc" secondAttribute="centerY" constant="-35.5" id="8EE-T7-Iu6"/>
+                            <constraint firstItem="CeJ-2u-t2k" firstAttribute="centerX" secondItem="rMr-E4-3dc" secondAttribute="centerX" id="iOQ-2X-Jzo"/>
+                            <constraint firstItem="CeJ-2u-t2k" firstAttribute="width" secondItem="rMr-E4-3dc" secondAttribute="width" id="sSK-gK-2gw"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SMC-l1-8dL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2690" y="-873"/>
         </scene>
         <!--Classes-->
         <scene sceneID="Oag-Lu-E1h">
@@ -521,7 +568,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1WV-fq-Kue" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Classes" image="NiaClasses" id="oKc-Ak-WnP"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="5rF-4s-eyw">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5rF-4s-eyw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -598,7 +645,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lw1-ES-nI1" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eTa-m0-dQf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eTa-m0-dQf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -651,7 +698,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gXS-NF-pV3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913" y="-610"/>
+            <point key="canvasLocation" x="930" y="-873"/>
         </scene>
     </scenes>
     <resources>
