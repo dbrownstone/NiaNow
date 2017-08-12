@@ -11,6 +11,8 @@ import UIKit
 class Settings: UITableViewController {
 
     var conversationLimitSegue = "showConversationLimit"
+    var classPeriod = 30
+    var oneOnOnePeriod = 7
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,17 +48,25 @@ class Settings: UITableViewController {
         switch indexPath.row {
         case 0:
             cell.textLabel?.text = "Class Messages"
-            cell.detailTextLabel?.text = "30 days"
+            cell.detailTextLabel?.text = "\(classPeriod) days"
         default:
             cell.textLabel?.text = "One-on-one Messages"
-            cell.detailTextLabel?.text = "7 days"
+            cell.detailTextLabel?.text = "\(oneOnOnePeriod) days"
         }
 
         return cell
     }
     
     @IBAction func unwindToSettings(segue:UIStoryboardSegue) {
-        if segue.identifier == "unwindSegueId" {
+        if segue.identifier == "returnToSettings" {
+            let controller = segue.source as! ChatLimits
+            let result = controller.selectedResult
+            if controller.modeClass {
+                classPeriod = result!
+            } else {
+                oneOnOnePeriod = result!
+            }
+            self.tableView.reloadData()
         }
     }
     

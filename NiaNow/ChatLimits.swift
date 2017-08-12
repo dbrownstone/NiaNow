@@ -13,11 +13,13 @@ class ChatLimits: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     var modeClass = true
     var returnToSettings = "returnToSettings"
     let classChoices = ["One Day", "Seven Days", "30 Days", "6 Months", "1 Year", "Never"]
-    let classChoicesDictionary = ["One Day": 1, "Seven Days": 7, "30 Days": 30, "6 Months": 183, "1 Year": 366, "Never" : -1]
     let individualChoices = ["One Day", "Seven Days", "30 Days"]
+    
+    let classChoicesDictionary = ["One Day": 1, "Seven Days": 7, "30 Days": 30, "6 Months": 183, "1 Year": 366, "Never" : -1]
     let individualChoicesDictionary = ["One Day": 1, "Seven Days": 7, "30 Days": 30]
     
-    var selectedEntry:String?
+    var selectedKey:String?
+    var selectedResult:Int?
     @IBOutlet weak var picker: UIPickerView!
     
     override func viewDidLoad() {
@@ -33,6 +35,8 @@ class ChatLimits: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     }
     
     @IBAction func setAction(_ sender: Any) {
+        selectedResult = modeClass ? classChoicesDictionary[selectedKey!] : individualChoicesDictionary[selectedKey!]
+        cancelAction(self)
     }
 
     @IBAction func cancelAction(_ sender: Any) {
@@ -60,9 +64,9 @@ class ChatLimits: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if modeClass {
-            selectedEntry = self.classChoices[row]
+            selectedKey = self.classChoices[row]
         } else {
-            selectedEntry = self.individualChoices[row]
+            selectedKey = self.individualChoices[row]
         }
     }
     
