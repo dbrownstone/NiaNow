@@ -11,9 +11,14 @@ import Firebase
 import FirebaseMessaging
 import UserNotifications
 
+let appDelegate:AppDelegate = (UIApplication.shared).delegate as! AppDelegate
+let defaults = UserDefaults.standard
+let ClassMessagesTimeSpan = "ClassMessagesTimeSpan"
+let PrivateMessagesTimeSpan = "PrivateMessagesTimeSpan"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
+
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -40,6 +45,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let controller = nvc.topViewController as! ClassesTableViewController
             controller.handleNotification(aps)
         }
+        
+        let appDefaults = [ClassMessagesTimeSpan : ["Thirty Days": 30] as Any, PrivateMessagesTimeSpan : ["Seven Days" :7] as Any] as [String : Any]
+        defaults.register(defaults: appDefaults)
+        
         return true
     }
     

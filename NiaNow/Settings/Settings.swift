@@ -10,89 +10,110 @@ import UIKit
 
 class Settings: UITableViewController {
 
-    var conversationLimitSegue = "showConversationLimit"
-    var classPeriod = 30
-    var oneOnOnePeriod = 7
+    var settingsItems = ["Message Availability"]
+    
+    var chatLimitSegue = "showChatConversationLimit"
+    var oneOnOneLimitSegue = "showSinglesConversationLimit"
+    
+    var classPeriod: String?
+    var classPeriodInt: Int?
+    var oneOnOnePeriod: String?
+    var oneOnOnePeriodInt: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //message availability setting
+        let privateMsgTimeSpan = defaults.object(forKey: PrivateMessagesTimeSpan) as! [String: Int]
+        let classMsgTimeSpan = defaults.object(forKey: ClassMessagesTimeSpan) as! [String: Int]
+        self.classPeriod = ([String](classMsgTimeSpan.keys)).first!
+        self.classPeriodInt = classMsgTimeSpan[classPeriod!]!
+        self.oneOnOnePeriod = ([String](privateMsgTimeSpan.keys)).first!
+        self.oneOnOnePeriodInt = privateMsgTimeSpan[oneOnOnePeriod!]!
+        //
     }
-
+    
+    override func viewWillDisappear(_ animated:Bool) {
+        super.viewWillDisappear(animated)
+        
+        defaults.synchronize()
+    }
+    
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return settingsItems.count
     }
-    
-    
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        switch section {
+        default: //Message Availability
+            return 2
+        }
+        
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style:.subtitle, reuseIdentifier: "subtitle")
-
-        switch indexPath.row {
-        case 0:
-            cell.textLabel?.text = "Class Messages"
-            cell.detailTextLabel?.text = "\(classPeriod) days"
-        default:
-            cell.textLabel?.text = "One-on-one Messages"
-            cell.detailTextLabel?.text = "\(oneOnOnePeriod) days"
+        
+        switch indexPath.section {
+        default: //Message Availability
+            switch indexPath.row {
+            case 0:
+                cell.textLabel?.text = "Class Messages"
+                cell.detailTextLabel?.text = self.classPeriod
+            default:
+                cell.textLabel?.text = "One-on-one Messages"
+                cell.detailTextLabel?.text = self.oneOnOnePeriod
+            }
         }
 
         return cell
     }
     
-    @IBAction func unwindToSettings(segue:UIStoryboardSegue) {
-        if segue.identifier == "returnToSettings" {
-            let controller = segue.source as! ChatLimits
-            let result = controller.selectedResult
-            if controller.modeClass {
-                classPeriod = result!
-            } else {
-                oneOnOnePeriod = result!
-            }
-            self.tableView.reloadData()
-        }
-    }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
-        case 0:
+        default:
             switch indexPath.row {
             case 0:
-                self.performSegue(withIdentifier: "showChatConversationLimit", sender: self)
+                self.performSegue(withIdentifier: chatLimitSegue, sender: self)
             default:
-                self.performSegue(withIdentifier: "showSinglesConversationLimit", sender: self)
+                self.performSegue(withIdentifier: oneOnOneLimitSegue, sender: self)
             }
-        default:
-            return
         }
     }
     
     // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let controller = segue.destination
-        if segue.identifier == "showChatConversationLimit" {
-            (controller as! ChatLimits).modeClass = true
-        } else if segue.identifier == "showSinglesConversationLimit" {
-            (controller as! ChatLimits).modeClass = false
+    
+    @IBAction func unwindToSettings(segue:UIStoryboardSegue) {
+        if segue.identifier == "returnToSettings" {
+            let controller = segue.source as! ChatLimits
+            let result = controller.selectedResult
+            let theKey = controller.selectedKey
+            let selectedDict = controller.selectedDict
+            if controller.modeClass {
+                self.classPeriod = theKey!
+                self.classPeriodInt = result!
+                defaults.set(selectedDict, forKey: ClassMessagesTimeSpan)
+            } else {
+                self.oneOnOnePeriod = theKey!
+                self.oneOnOnePeriodInt = result!
+                defaults.set(selectedDict, forKey: PrivateMessagesTimeSpan)
+            }
+            defaults.synchronize()
+            self.tableView.reloadData()
         }
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let controller = segue.destination as! ChatLimits
+        if segue.identifier == chatLimitSegue {
+            controller.modeClass = true
+        } else if segue.identifier == oneOnOneLimitSegue {
+            controller.modeClass = false
+        }
+    }
 }

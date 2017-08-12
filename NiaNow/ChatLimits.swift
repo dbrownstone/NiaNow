@@ -8,18 +8,24 @@
 
 import UIKit
 
+/**
+ Set the amount of time that a chat message is kept in the database and displayed in the chat (Class or individual - one-on-one) screen
+ */
 class ChatLimits: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
+    /// true for Class Chat messages; false for one on one messages
     var modeClass = true
-    var returnToSettings = "returnToSettings"
+    var returnToSettingsSegue = "returnToSettings"
+    
     let classChoices = ["One Day", "Seven Days", "30 Days", "6 Months", "1 Year", "Never"]
     let individualChoices = ["One Day", "Seven Days", "30 Days"]
     
-    let classChoicesDictionary = ["One Day": 1, "Seven Days": 7, "30 Days": 30, "6 Months": 183, "1 Year": 366, "Never" : -1]
+    let classChoicesDictionary = ["One Day": 1, "Seven Days": 7, "30 Days": 30, "6 Months": 180, "1 Year": 366, "Never" : -1]
     let individualChoicesDictionary = ["One Day": 1, "Seven Days": 7, "30 Days": 30]
     
     var selectedKey:String?
     var selectedResult:Int?
+    var selectedDict:[String: Int] = [:]
+    
     @IBOutlet weak var picker: UIPickerView!
     
     override func viewDidLoad() {
@@ -27,6 +33,12 @@ class ChatLimits: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
 
         picker.delegate = self
         picker.dataSource = self
+        
+        var chatMode = "One-on-one"
+        if modeClass {
+            chatMode = "Class"
+        }
+        self.title = "Set the Amount of Time to Retain and Display Messages\nfor \(chatMode) Chat"
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,11 +48,12 @@ class ChatLimits: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     
     @IBAction func setAction(_ sender: Any) {
         selectedResult = modeClass ? classChoicesDictionary[selectedKey!] : individualChoicesDictionary[selectedKey!]
+        selectedDict = [selectedKey! : selectedResult!]
         cancelAction(self)
     }
 
     @IBAction func cancelAction(_ sender: Any) {
-        self.performSegue(withIdentifier: "returnToSettings", sender: self)
+        self.performSegue(withIdentifier: returnToSettingsSegue, sender: self)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
