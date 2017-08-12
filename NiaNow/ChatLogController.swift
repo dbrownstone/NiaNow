@@ -43,18 +43,24 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
         }
     }
     
+    /**
+     When set, this displays a group chat for this specific Nia Class
+     */
     var thisClass:NiaClass? {
         didSet {
             navigationItem.title = (thisClass?.name)! + " Chat"
             
             groupChat = true
             
-            getAllMembersOfTheClass()
+            getAllMembersOfThisClass()
             observeGroupMessages()
         }
     }
     
-    func getAllMembersOfTheClass() {
+    /**
+     Creates an array of all the members of this specific Nia Class
+     */
+    func getAllMembersOfThisClass() {
         let usersRef = Database.database().reference().child("users")
         usersRef.observe(.value, with: { snapshot in
             var newMembersList:[User] = []
@@ -79,21 +85,44 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
         })
     }
     
+    /**
+     Gets all the available messages sent to this group within the limitations of the Settings time line
+     */
     func observeGroupMessages() {
         Database.database().reference().child("messages").observe(.childAdded, with: { (snapshot) in
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 let message = Message(dictionary: dictionary)
-                if message.toId == self.thisClass?.uid {
-                    self.messages.append(message)
-                    self.messages.sort(by: {(message1, message2) -> Bool in
-                        return (message1.timeStamp?.intValue)! > (message2.timeStamp?.intValue)!
-                    })
-                    DispatchQueue.main.async(execute: {
-                        self.collectionView?.reloadData()
-                    })
+                if self.makeSureThisMessageIsDateValid(message) {
+                    if message.toId == self.thisClass?.uid {
+                        self.messages.append(message)
+                        self.messages.sort(by: {(message1, message2) -> Bool in
+                            return (message1.timeStamp?.intValue)! > (message2.timeStamp?.intValue)!
+                        })
+                        DispatchQueue.main.async(execute: {
+                            self.collectionView?.reloadData()
+                        })
+                    }
                 }
             }
         })
+    }
+    
+    /**
+     Checks the message date to determine if it is active according to the settings value
+     */
+    func makeSureThisMessageIsDateValid(_ message: Message)-> Bool {
+        var result = false
+        let classMsgTimeSpan = defaults.object(forKey: ClassMessagesTimeSpan) as! [String: Int]
+        let classPeriod = ([String](classMsgTimeSpan.keys)).first!
+        let classPeriodInt = classMsgTimeSpan[classPeriod]! //days
+        let classPeriodSeconds = Double(classPeriodInt) * 24 * 60 * 60
+        if let seconds = message.timeStamp?.doubleValue {
+            let computedDate = Date(timeIntervalSince1970: seconds + classPeriodSeconds)
+            if computedDate > NSDate() as Date  {
+                result = true
+            }
+        }
+        return result
     }
     
     func getFromIdImageUrl(_ id: String) -> String {
@@ -361,7 +390,7 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
         if let seconds = message.timeStamp?.doubleValue {
             let timeStampDate = Date(timeIntervalSince1970: seconds)
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "E d, h:mm"
+            dateFormatter.dateFormat = "E, MMM d, h:mm"
             dateFormatter.timeZone = NSTimeZone.local
             cell.dateView.text = dateFormatter.string(from: timeStampDate)
         }

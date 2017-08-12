@@ -16,11 +16,11 @@ class ChatLimits: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     var modeClass = true
     var returnToSettingsSegue = "returnToSettings"
     
-    let classChoices = ["One Day", "Seven Days", "30 Days", "6 Months", "1 Year", "Never"]
-    let individualChoices = ["One Day", "Seven Days", "30 Days"]
+    let classChoices = ["One Day", "Seven Days", "14 Days", "21 Days", "30 Days", "6 Months", "1 Year", "Never"]
+    let individualChoices = ["One Day", "Seven Days", "14 Days", "21 Days", "30 Days"]
     
-    let classChoicesDictionary = ["One Day": 1, "Seven Days": 7, "30 Days": 30, "6 Months": 180, "1 Year": 366, "Never" : -1]
-    let individualChoicesDictionary = ["One Day": 1, "Seven Days": 7, "30 Days": 30]
+    let classChoicesDictionary = ["One Day": 1, "Seven Days": 7, "14 Days": 14, "21 Days": 21, "30 Days": 30, "6 Months": 180, "1 Year": 366, "Never" : -1]
+    let individualChoicesDictionary = ["One Day": 1, "Seven Days": 7, "14 Days": 14, "21 Days": 21, "30 Days": 30]
     
     var selectedKey:String?
     var selectedResult:Int?
