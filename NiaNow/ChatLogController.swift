@@ -109,6 +109,8 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
     
     /**
      Checks the message date to determine if it is active according to the settings value
+     
+     Returns - Bool - true if active
      */
     func makeSureThisMessageIsDateValid(_ message: Message)-> Bool {
         var result = false
@@ -125,6 +127,13 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
         return result
     }
     
+    /**
+     Get the Firebase URL of an image for the selected user
+     
+     Parameter - id: UDID string for the message sender (fromId)
+     
+     Returns: String URL
+     */
     func getFromIdImageUrl(_ id: String) -> String {
         var result = ""
         for member in self.classMembers {
@@ -136,6 +145,9 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
         return result
     }
     
+    /**
+     sets up a one-on-one chat
+     */
     var user:User? {
         didSet {
             navigationItem.title = "Chat with \((user?.name)!)"
